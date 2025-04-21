@@ -1,75 +1,226 @@
+/* Color Variables */
+:root {
+  --dark-blue: #0a1f3d;
+  --golden: #d4af37;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+/* Base Styles */
 body {
-  margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #0d1b2a;
-  color: white;
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-blue);
+  color: var(--white);
   line-height: 1.6;
 }
 
+/* Header Styles */
 header {
-  background-color: #1b263b;
-  padding: 2em;
-  text-align: center;
-}
-
-header h1 {
-  color: #f0a500;
-}
-
-nav a {
-  color: #f0a500;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-section {
-  padding: 2em;
-}
-
-#services ul {
-  list-style: none;
-  padding: 0;
-}
-
-#services li {
-  background: #1b263b;
-  margin: 10px 0;
-  padding: 10px;
-  border-left: 5px solid #f0a500;
-}
-
-form {
+  background: linear-gradient(rgba(10, 31, 61, 0.8), rgba(10, 31, 61, 0.9)), 
+              url('https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  background: #1b263b;
-  padding: 20px;
-  border-radius: 5px;
-  max-width: 500px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
 }
 
-form input, form select, form textarea {
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-}
-
-form button {
-  background-color: #f0a500;
-  color: black;
-  border: none;
-  padding: 10px;
+.logo {
+  font-size: 2.5rem;
+  color: var(--golden);
+  margin-bottom: 1rem;
   font-weight: bold;
+}
+
+.tagline {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+}
+
+/* Navigation Styles */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(10, 31, 61, 0.9);
+  padding: 1rem 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
+}
+
+.nav-links a {
+  color: var(--golden);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--white);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-left: 2rem;
+}
+
+.social-links a {
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--golden);
+}
+
+/* Section Styles */
+section {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: var(--golden);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+/* Services Section */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.service-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 2rem;
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.service-card h3 {
+  color: var(--golden);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  color: var(--white);
+}
+
+/* Contact Form Styles */
+form {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--golden);
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--golden);
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+button {
+  background-color: var(--golden);
+  color: var(--dark-blue);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 0 auto;
 }
 
-form button:hover {
-  background-color: #ffc107;
+button:hover {
+  background-color: #e6c260;
 }
 
-.thank-you-message {
-  color: #f0a500;
-  margin-top: 1em;
+/* Thank You Message */
+#thankYouMessage {
+  display: none;
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(212, 175, 55, 0.2);
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-top: 4rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .services {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .service-card {
+    max-width: 100%;
+  }
+  
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .social-links, .nav-links {
+    margin: 1rem 0;
+  }
 }
