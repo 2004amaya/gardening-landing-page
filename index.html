@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2004 amaya - Social Media Services</title>
+    <style>
+        :root {
+            --purple: #5910E5;
+            --green: #C3FF83;
+            --white: #FFFFFF;
+            --black: #000000;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--purple), #3a0a99);
+            padding: 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: var(--green);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links a {
+            color: var(--green);
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--white);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .service-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(89, 16, 229, 0.3);
+        }
+        
+        .service-card h3 {
+            color: var(--green);
+            margin-top: 0;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: var(--purple);
+            font-size: 1.2rem;
+        }
+        
+        .contact {
+            background-color: rgba(89, 16, 229, 0.1);
+            padding: 3rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+        }
+        
+        .contact h2 {
+            color: var(--green);
+            text-align: center;
+        }
+        
+        .contact p {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        form {
+            display: grid;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        input, select, textarea {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            width: 100%;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: 2px solid var(--green);
+        }
+        
+        button {
+            background-color: var(--purple);
+            color: var(--white);
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #7a3aff;
+        }
+        
+        #thankYouMessage {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background-color: rgba(195, 255, 131, 0.2);
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            background-color: rgba(89, 16, 229, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">2004 amaya</div>
+        <div class="tagline">focusing on your own success with our help</div>
+        <div class="social-links">
+            <a href="https://instagram.com/yourprofile" target="_blank">Instagram</a>
+            <a href="mailto:amayaalajandra5@gmail.com">Email</a>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Lawn Mowing and Maintenance</h3>
+                <p>Professional lawn care to keep your outdoor space looking pristine.</p>
+                <p class="price">Between $30 and $80 per visit, depending on the size of the yard.</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Tree and Shrub Trimming</h3>
+                <p>Expert trimming to maintain healthy plants and beautiful landscapes.</p>
+                <p class="price">From $50 to $150 per hour or per tree, depending on the complexity.</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Irrigation System Installation</h3>
+                <p>Custom irrigation solutions for efficient water management.</p>
+                <p class="price">Can range from $500 to $3,000, depending on the area and technology required.</p>
+            </div>
+        </div>
+        
+        <div class="contact">
+            <h2>Let's get in touch</h2>
+            <p>Tell me a little bit about your project below, or email me directly at <a href="mailto:amayaalajandra5@gmail.com" style="color: var(--green);">amayaalajandra5@gmail.com</a>. Looking forward to hearing from you!</p>
+            
+            <form id="contactForm">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <select name="service" required>
+                    <option value="" disabled selected>Select Service</option>
+                    <option value="lawn-mowing">Lawn Mowing and Maintenance</option>
+                    <option value="tree-trimming">Tree and Shrub Trimming</option>
+                    <option value="irrigation">Irrigation System Installation</option>
+                </select>
+                <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+            
+            <div id="thankYouMessage">
+                <h3>Thank you for your interest!</h3>
+                <p>Please allow 1-3 business days for an answer. Looking forward to working together.</p>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2024 2004 amaya. All rights reserved.
+    </footer>
+    
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, you would send the form data to a server here
+            // For GitHub pages without backend, you can use Formspree or similar service
+            
+            // Show thank you message
+            document.getElementById('thankYouMessage').style.display = 'block';
+            document.getElementById('contactForm').reset();
+            
+            // Scroll to thank you message
+            document.getElementById('thankYouMessage').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
