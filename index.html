@@ -6,26 +6,28 @@
     <title>2004 amaya - Social Media Services</title>
     <style>
         :root {
-            --navy: #000080;       /* Navy Blue */
             --gold: #FFD700;       /* Golden */
-            --white: #FFFFFF;      /* White */
             --black: #000000;      /* Black */
+            --white: #FFFFFF;      /* White */
+            --dark-gold: #CCAC00;  /* Darker gold for gradients */
         }
         
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--black);
+            background: linear-gradient(to bottom, var(--black) 0%, var(--black) 50%, var(--gold) 100%);
             color: var(--white);
             line-height: 1.6;
+            min-height: 100vh;
         }
         
         header {
-            background: linear-gradient(135deg, var(--navy), #000050);
+            background: linear-gradient(135deg, var(--black), var(--dark-gold));
             padding: 2rem;
             text-align: center;
             color: var(--white);
+            border-bottom: 3px solid var(--gold);
         }
         
         .logo {
@@ -33,11 +35,13 @@
             font-weight: bold;
             margin-bottom: 1rem;
             color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .tagline {
             font-size: 1.5rem;
             margin-bottom: 2rem;
+            color: var(--gold);
         }
         
         .social-links a {
@@ -66,15 +70,16 @@
         }
         
         .service-card {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
             padding: 2rem;
             transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--gold);
         }
         
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 128, 0.3);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
         }
         
         .service-card h3 {
@@ -84,15 +89,16 @@
         
         .price {
             font-weight: bold;
-            color: var(--navy);
+            color: var(--white);
             font-size: 1.2rem;
         }
         
         .contact {
-            background-color: rgba(0, 0, 128, 0.1);
+            background-color: rgba(0, 0, 0, 0.7);
             padding: 3rem;
             border-radius: 10px;
             margin-top: 3rem;
+            border: 1px solid var(--gold);
         }
         
         .contact h2 {
@@ -114,30 +120,34 @@
         
         input, select, textarea {
             padding: 0.8rem;
-            border: none;
+            border: 1px solid var(--gold);
             border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(0, 0, 0, 0.5);
             color: var(--white);
             width: 100%;
         }
         
         input:focus, select:focus, textarea:focus {
             outline: 2px solid var(--gold);
+            background-color: rgba(0, 0, 0, 0.7);
         }
         
         button {
-            background-color: var(--navy);
-            color: var(--white);
+            background-color: var(--gold);
+            color: var(--black);
             padding: 1rem;
             border: none;
             border-radius: 5px;
             font-size: 1rem;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            font-weight: bold;
         }
         
         button:hover {
-            background-color: #0000A0;
+            background-color: var(--black);
+            color: var(--gold);
+            border: 1px solid var(--gold);
         }
         
         #thankYouMessage {
@@ -147,13 +157,15 @@
             background-color: rgba(255, 215, 0, 0.2);
             border-radius: 10px;
             margin-top: 2rem;
+            border: 1px solid var(--gold);
         }
         
         footer {
             text-align: center;
             padding: 2rem;
             margin-top: 3rem;
-            background-color: rgba(0, 0, 128, 0.2);
+            background-color: rgba(0, 0, 0, 0.7);
+            border-top: 3px solid var(--gold);
         }
         
         @media (max-width: 768px) {
@@ -164,6 +176,7 @@
     </style>
 </head>
 <body>
+    <!-- The rest of your HTML content remains exactly the same as in previous versions -->
     <header>
         <div class="logo">2004 amaya</div>
         <div class="tagline">focusing on your own success with our help</div>
@@ -226,9 +239,6 @@
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // In a real implementation, you would send the form data to a server here
-            // For GitHub pages without backend, you can use Formspree or similar service
             
             // Show thank you message
             document.getElementById('thankYouMessage').style.display = 'block';
