@@ -75,6 +75,7 @@
             padding: 2rem;
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid var(--gold);
+            color: var(--white); /* Added white text for all service card content */
         }
         
         .service-card:hover {
@@ -83,13 +84,17 @@
         }
         
         .service-card h3 {
-            color: var(--gold);
+            color: var(--white); /* Changed from gold to white */
             margin-top: 0;
+        }
+        
+        .service-card p {
+            color: var(--white); /* Ensures all service text is white */
         }
         
         .price {
             font-weight: bold;
-            color: var(--white);
+            color: var(--white); /* Kept white as requested */
             font-size: 1.2rem;
         }
         
@@ -99,6 +104,7 @@
             border-radius: 10px;
             margin-top: 3rem;
             border: 1px solid var(--gold);
+            color: var(--white); /* Added for consistency */
         }
         
         .contact h2 {
@@ -109,6 +115,7 @@
         .contact p {
             text-align: center;
             margin-bottom: 2rem;
+            color: var(--white); /* Added white text for contact paragraph */
         }
         
         form {
@@ -158,6 +165,7 @@
             border-radius: 10px;
             margin-top: 2rem;
             border: 1px solid var(--gold);
+            color: var(--white); /* Added white text for thank you message */
         }
         
         footer {
@@ -166,6 +174,7 @@
             margin-top: 3rem;
             background-color: rgba(0, 0, 0, 0.7);
             border-top: 3px solid var(--gold);
+            color: var(--white); /* Added white text for footer */
         }
         
         @media (max-width: 768px) {
@@ -176,7 +185,6 @@
     </style>
 </head>
 <body>
-    <!-- The rest of your HTML content remains exactly the same as in previous versions -->
     <header>
         <div class="logo">2004 amaya</div>
         <div class="tagline">focusing on your own success with our help</div>
@@ -187,7 +195,7 @@
     </header>
     
     <div class="container">
-        <h2>Our Services</h2>
+        <h2 style="color: var(--gold);">Our Services</h2> <!-- Added inline style to keep heading gold -->
         <div class="services">
             <div class="service-card">
                 <h3>Lawn Mowing and Maintenance</h3>
